@@ -10,7 +10,7 @@
     {% if form.errors %}
         <p style="color: red;">HAY ALGO MAL EN EL FORMULARIO</p>
     {% endif %}
-    <form action="/app_proyecto/auto_form" method="POST"> {% csrf_token %}
+    <form action="{% url 'auto_form' %}" method="POST"> {% csrf_token %}
 
         <table>
             {{ formulario.as_table }}

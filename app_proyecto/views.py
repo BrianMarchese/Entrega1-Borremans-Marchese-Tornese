@@ -20,7 +20,7 @@ def animal_formulario(request):
             return render (request, "app_proyecto/inicio.html")
     else:
         formulario= Animal_forms()
-    return render(request, "app_proyecto/animal_for.html", {"formulario":formulario})
+    return render(request, "app_proyecto/animal_form.html", {"formulario":formulario})
 
 def persona_formulario(request):
     if (request.method=="POST"):
