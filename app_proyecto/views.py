@@ -42,9 +42,9 @@ def auto_formulario(request):
         if form.is_valid():
             info=form.cleaned_data
             marca= info["marca"]
-            anio= info["anio"]
+            anio_fabricacion= info["anio_fabricacion"]
             modelo= info['modelo']
-            auto= Auto(marca=marca, anio=anio, modelo=modelo)
+            auto= Auto(marca=marca, anio_fabricacion=anio_fabricacion, modelo=modelo)
             auto.save()
             return render (request, "app_proyecto/inicio.html")
     else:

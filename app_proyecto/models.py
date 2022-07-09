@@ -17,7 +17,7 @@ class Persona(models.Model):
 
 class Auto(models.Model):
     marca= models.CharField(max_length=50)
-    anio_fabricacion= models.IntegerField()
+    anio_fabricacion= models.DateField()
     modelo= models.CharField(max_length=50)
 
     def __str__(self):
