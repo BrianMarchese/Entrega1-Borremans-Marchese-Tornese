@@ -10,7 +10,7 @@ def inicio(request):
 
 def animal_formulario(request):
     if (request.method=="POST"):
-        form= animal_forms(request.POST)
+        form= Animal_forms(request.POST)
         if form.is_valid():
             info=form.cleaned_data
             nombre= info["nombre"]
@@ -19,12 +19,12 @@ def animal_formulario(request):
             animal.save()
             return render (request, "app_proyecto/inicio.html")
     else:
-        form= animal_forms()
-    return render(request, "app_proyecto/animal_formulario.html", {"formulario":form})
+        formulario= Animal_forms()
+    return render(request, "app_proyecto/animal_for.html", {"formulario":formulario})
 
 def persona_formulario(request):
     if (request.method=="POST"):
-        form= persona_forms(request.POST)
+        form= Persona_forms(request.POST)
         if form.is_valid():
             info=form.cleaned_data
             nombre= info["nombre"]
@@ -33,12 +33,12 @@ def persona_formulario(request):
             persona.save()
             return render (request, "app_proyecto/inicio.html")
     else:
-        form= persona_forms()
-    return render(request, "app_proyecto/persona_formulario.html", {"formulario":form})
+        formulario= Persona_forms()
+    return render(request, "app_proyecto/persona_form.html", {"formulario":formulario})
 
 def auto_formulario(request):
     if (request.method=="POST"):
-        form= auto_forms(request.POST)
+        form= Auto_forms(request.POST)
         if form.is_valid():
             info=form.cleaned_data
             marca= info["marca"]
@@ -48,5 +48,5 @@ def auto_formulario(request):
             auto.save()
             return render (request, "app_proyecto/inicio.html")
     else:
-        form= animal_forms()
-    return render(request, "app_proyecto/auto_formulario.html", {"formulario":form})
+        formulario= Auto_forms()
+    return render(request, "app_proyecto/auto_form.html", {"formulario":formulario})
