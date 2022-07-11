@@ -55,7 +55,7 @@ ROOT_URLCONF = 'proyecto_coder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/Usuario/Documents/PythonCoder/segundoMtv-09-07-22-main/proyecto_coder/proyecto_coder/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

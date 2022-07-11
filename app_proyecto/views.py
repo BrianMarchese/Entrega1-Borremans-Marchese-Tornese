@@ -50,3 +50,12 @@ def auto_formulario(request):
     else:
         formulario= Auto_forms()
     return render(request, "app_proyecto/auto_form.html", {"formulario":formulario})
+
+def buscar_persona(request):
+
+    return render(request, "app_proyecto/buscar_persona.html")
+
+def buscar_bd(request):
+    nombre= request.GET.get("nombre")
+    respuesta= f"estoy buscando a: {nombre}"
+    return HttpResponse(respuesta)

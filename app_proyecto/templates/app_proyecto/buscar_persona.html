@@ -7,17 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>FORMULARIO DE AUTO</h1>
+    <h1>FORMULARIO BUSQUEDA DE PERSONAS</h1>
     {% if form.errors %}
         <p style="color: red;">HAY ALGO MAL EN EL FORMULARIO</p>
     {% endif %}
-    <form action="{% url 'auto_form' %}" method="POST"> {% csrf_token %}
+    <form action="{% url 'buscar_bd' %}" method="GET">
 
-        <table>
-            {{ formulario.as_table }}
-        </table>
+       <input type="text" name="nombre" id="nombre">
 
-        <input type="submit" value="Enviar">
+       <input type="submit" value="Buscar">
     </form>
 </body>
 </html>
