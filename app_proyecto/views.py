@@ -56,6 +56,10 @@ def buscar_persona(request):
     return render(request, "app_proyecto/buscar_persona.html")
 
 def buscar_bd(request):
-    nombre= request.GET.get("nombre")
-    respuesta= f"estoy buscando a: {nombre}"
-    return HttpResponse(respuesta)
+    if request.GET["nombre"]:
+        nombre= request.GET["nombre"]
+        persona= Persona.objects.filter(nombre=nombre)
+        return render(request, "app_proyecto/busqueda_persona.html", {"persona":persona})
+
+    else:
+        return render(request, "app_proyecto/buscar_persona.html", {"error": "No se ingreso ninguna persona"})
