@@ -12,10 +12,11 @@
     <h1>RESULTADO DE LA BUSQUEDA</h1>
 
     <ul> 
-        {% for personaa in persona %}
-        <li><p>Nombre:{{ personaa.nombre }}</p></li>
-        <li><p>Edad: {{ personaa.edad }}</p></li> 
-        <br>
+        {% for autoo in auto %}
+        <li><p>Marca:{{ autoo.marca }}</p></li>
+        <li><p>Modelo:{{ autoo.modelo }}</p></li>
+        <li><p>Año de fabricacion: {{ autoo.anio_fabricacion }}</p></li>
+                <br>
         {% endfor %}
     </ul>
 

@@ -63,3 +63,29 @@ def buscar_bd(request):
 
     else:
         return render(request, "app_proyecto/buscar_persona.html", {"error": "No se ingreso ninguna persona"})
+
+def buscar_auto(request):
+
+    return render(request, "app_proyecto/buscar_auto.html")
+
+def buscar_bd_auto(request):
+    if request.GET["marca"]:
+        marca= request.GET["marca"]
+        auto= Auto.objects.filter(marca=marca)
+        return render(request, "app_proyecto/busqueda_auto.html", {"auto":auto})
+
+    else:
+        return render(request, "app_proyecto/buscar_auto.html", {"error": "No se ingreso ningun auto"})
+
+def buscar_animal(request):
+
+    return render(request, "app_proyecto/buscar_animal.html")
+
+def buscar_bd_animal(request):
+    if request.GET["tipo_animal"]:
+        nombre= request.GET["tipo_animal"]
+        animal= Animal.objects.filter(nombre=nombre)
+        return render(request, "app_proyecto/busqueda_animal.html", {"animal":animal})
+
+    else:
+        return render(request, "app_proyecto/buscar_animal.html", {"error": "No se ingreso ningun animal"})
